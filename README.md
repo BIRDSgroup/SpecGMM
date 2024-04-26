@@ -33,7 +33,7 @@ Note: MATLAB R2023a on a Linux machine was used to run the experiments. Download
 
 - Modified baseline code
 
-  ![Baseline](https://drive.google.com/file/d/1ypqo4SGRlMMMzcDLkD8XTjDduNw2i-dv/view?usp=sharing)
+  ![Baseline](https://github.com/BIRDSgroup/SpecGMM/blob/main/Figures/PNG_Files/1-Background.png)
   
   Run the Baseline_Analysis.m script on the MATLAB terminal:
   ```
