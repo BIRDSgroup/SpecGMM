@@ -32,11 +32,15 @@ Note: MATLAB R2023a on a Linux machine was used to run the experiments. Download
 ## Instructions
 
 - Modified baseline code
+  
   Run the Baseline_Analysis.m script.
 
 - SpecGMM Code
+  
   Run the SpecGMM_Analysis.m script.
 
 ## Folder Description
 
-...
+- [Database](https://github.com/BIRDSgroup/SpecGMM/tree/main/DataBase) contains the datasets used in our analyses
+- [Figures](https://github.com/BIRDSgroup/SpecGMM/tree/main/Figures) contains scripts to reproduce the figures in the manuscript
+- [Supplementary Data Files](https://github.com/BIRDSgroup/SpecGMM/tree/main/Supplementary%20Data%20Files) contains supplementary files containing detailed analyses and results
