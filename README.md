@@ -33,11 +33,17 @@ Note: MATLAB R2023a on a Linux machine was used to run the experiments. Download
 
 - Modified baseline code
   
-  Run the Baseline_Analysis.m script.
+  Run the Baseline_Analysis.m script on the MATLAB terminal:
+  ```
+  run('Baseline_Analysis.m')
+  ```
 
 - SpecGMM Code
   
-  Run the SpecGMM_Analysis.m script.
+  Run the SpecGMM_Analysis.m script on the MATLAB terminal:
+  ```
+  run('SpecGMM_Analysis.m')
+  ```
 
 ## Folder Description
 
