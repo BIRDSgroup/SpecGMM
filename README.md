@@ -41,6 +41,8 @@ Note: MATLAB R2023a on a Linux machine was used to run the experiments. Download
   ```
 
 - SpecGMM Code
+
+  ![SpecGMM](https://github.com/BIRDSgroup/SpecGMM/blob/main/Figures/PNG_Files/2-Overview.png)
   
   Run the SpecGMM_Analysis.m script on the MATLAB terminal:
   ```
