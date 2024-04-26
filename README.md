@@ -45,6 +45,8 @@ Note: MATLAB R2023a on a Linux machine was used to run the experiments. Download
   run('SpecGMM_Analysis.m')
   ```
 
+Both the codes, by default, run for the Primates dataset. You can update the "dataSets" array in the code as needed.
+
 ## Folder Description
 
 - [Database](https://github.com/BIRDSgroup/SpecGMM/tree/main/DataBase) contains the datasets used in our analyses
