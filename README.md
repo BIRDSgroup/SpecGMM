@@ -1,6 +1,6 @@
 # SpecGMM
 
-This repository contains codes for the analyses done for the manuscript “SpecGMM: .....” by Saish Jaiswal, Hema A Murthy, and Manikandan Narayanan.
+This repository contains codes for the analyses done for the manuscript “SpecGMM: Integrating Spectral analysis and Gaussian Mixture Models for taxonomic classification and identification of discriminative DNA regions” by Saish Jaiswal, Hema A Murthy, and Manikandan Narayanan.
 
 ## License preamble 
 
