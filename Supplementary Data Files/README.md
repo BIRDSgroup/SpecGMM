@@ -27,4 +27,4 @@ The file contains detailed classification results for all the datasets analysed 
 
 - ## File D4: Comparative analysis of numerical representations
 
-We compared SpecGMM's performance on various datasets from the baseline study using different numerical representations. Consistent with the findings of the baseline study (Randhawa et al., 2019), we found that the Purine-Pyrimidine (PP) representation was the best-performing encoding for our SpecGMM approach.
+The file reports SpecGMM's performance on various datasets from the baseline study using different numerical representations.
