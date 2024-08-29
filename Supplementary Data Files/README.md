@@ -25,6 +25,14 @@ The file contains detailed classification results for all the datasets analysed 
 - average weighted specificity
 - average weighted F1-score
 
-- ## File D4: Comparative analysis of numerical representations
+## File D4: Comparative analysis of numerical representations
 
 The file reports SpecGMM's performance on various datasets from the baseline study using different numerical representations.
+
+## File D5: Performance — Baseline vs. SpecGMM — after homology reduction
+
+The file contains results for the baseline and the SpecGMM methods after performing homology reduction on our datasets using the GraphPart algorithm for different threshold values and different numbers of partitions.
+
+## File D6: Performance — SpecGMM vs. DNABERT-S
+
+The file contains a comparative analysis of SpecGMM and DNABERT-S models.
