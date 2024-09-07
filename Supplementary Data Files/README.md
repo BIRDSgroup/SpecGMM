@@ -14,7 +14,7 @@ The file contains the following details of the datasets used in the study.
 The file contains the taxonomy information (Kingdom to Species labels) and the start and end positions of the 16S rRNA HVRs
 obtained using the QIIME2 analysis.
 
-## File D3: Performance — Baseline vs. SpecGMM
+## File D3: SpecGMM Evaluations
 
 The file contains detailed classification results for all the datasets analysed in the study for Linear Discriminant (LD), Linear SVM (LSVM), Quadratic SVM (QSVM), FineKNN, Subspace Discriminant, and Subspace KNN classifiers comparing baseline and SpecGMM methods. The following performance metrics, computed over four folds, are available in the file:
 
