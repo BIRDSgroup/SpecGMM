@@ -56,3 +56,10 @@ Both the codes, by default, run for the Primates dataset. You can update the "da
 - [Database](https://github.com/BIRDSgroup/SpecGMM/tree/main/DataBase) contains the datasets used in our analyses
 - [Figures](https://github.com/BIRDSgroup/SpecGMM/tree/main/Figures) contains scripts to reproduce the figures in the manuscript
 - [Supplementary Data Files](https://github.com/BIRDSgroup/SpecGMM/tree/main/Supplementary%20Data%20Files) contains supplementary files containing detailed analyses and results
+
+## Aditional Analyses
+
+- QIIME2: We used [QIIME2](https://qiime2.org/) tool to perform 16S rRNA hypervariable region analysis.
+- Homology reduction: We used the [GraphPart](https://github.com/graph-part/graph-part) tool for performing homology reduction.
+- Kraken-2: A k-mer based tool, [Kraken-2](https://github.com/DerrickWood/kraken2/tree/master), was compared with SpecGMM.
+- DNABERT-S: A deep-learning-based model, [DNABERT-S](https://github.com/MAGICS-LAB/DNABERT_S/tree/main), was compared with SpecGMM.
