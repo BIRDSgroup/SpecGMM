@@ -6,6 +6,9 @@
 
 function [SuperVector, pointsPerMixtureComponent, mixtureWeights, meanVectors, posteriors] = AdaptGMM(UBM_GMM, SeqData)
 
+    % Relevance factor
+    rho = 16;
+
     n_mixtures = UBM_GMM.NumComponents;
 
     % Mixture weights
@@ -45,7 +48,7 @@ function [SuperVector, pointsPerMixtureComponent, mixtureWeights, meanVectors, p
 
     %MAP Adaptation -- mean only
         for k = 1:n_mixtures
-            alpha_k = N_k(k)/(N_k(k)+16);
+           alpha_k = N_k(k)/(N_k(k) + rho);
             Mu_k_final(k,:) = alpha_k*New_Mu_k(k,:) + (1-alpha_k)*Mu_k(k,:);
         end
 

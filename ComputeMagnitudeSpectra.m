@@ -4,7 +4,7 @@
 % Function: Compute Magnitude Spectra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [SequenceDataPooled] = ComputeMagnitudeSpectra(parameters, data)
+function [SequenceDataPooled] = ComputeMagnitudeSpectra(parameters, data, numRepresentation)
 	% Looping over classes
     for cls = 1:data.numberOfClusters
 
@@ -20,7 +20,7 @@ function [SequenceDataPooled] = ComputeMagnitudeSpectra(parameters, data)
         for a = progress(1:data.pointsPerCluster{cls})
 
             % Mapping sequence to numerical representation
-            ns = numMapping(data.Sequences{sp + a - 1}, "PP");
+            ns = numMapping(data.Sequences{sp + a - 1}, numRepresentation);
 
             % Number of windows
             nWin = floor((length(ns)-parameters.winLen)/parameters.winShift);

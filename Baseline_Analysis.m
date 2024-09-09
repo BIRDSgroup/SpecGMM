@@ -33,7 +33,9 @@ set(0, 'DefaultFigureRenderer', 'painters');
 % 'FamilyToGenus_Bacillaceae_16SrRNA', ...
 % 'GenusToSpecies_Bacillus_16SrRNA'
 
-dataSets = {'Primates'};
+dataSets = {
+'Primates'
+};
 
 % To store the accuracies for each class
 dataSetAccuracies = struct();
@@ -41,8 +43,12 @@ dataSetMetrics = struct();
 
 %% Define the classifiers to be used ('LinearDiscriminant', 'LinearSVM')
 classifiers = {
-    'LinearDiscriminant';
-    'LinearSVM';
+	'LinearDiscriminant'
+	'LinearSVM'
+    'QuadraticSVM'
+	'FineKNN'
+	'SubspaceDiscriminant'
+	'SubspaceKNN'
 };
 
 % Getting the current directory
@@ -58,7 +64,7 @@ else                    % There is a parallel pool of <p.NumWorkers> workers
 end
 
 %% Add folders and subfolders in the current directory to the path
-addpath(genpath('./'))
+% addpath(genpath('./'))
 
 %% Loop over datasets
 for ds = 1:length(dataSets)
@@ -303,13 +309,53 @@ for ds = 1:length(dataSets)
     dataSetMetrics.(dataSet) = [avgMetrics, stdAcc];
 end
 
+% Initialize the metricsConsolidated matrix with zeros
+metricsConsolidated = zeros(length(dataSets), 6 * length(classifiers));
 
-metricsConsolidated = zeros(length(dataSets), 6*length(classifiers));
-for ds=1:length(dataSets)
-    metricsConsolidated(ds,:) = dataSetMetrics.(dataSets{ds});
+% Consolidate all the metrics in the desired order
+for ds = 1:length(dataSets)
+    metrics = dataSetMetrics.(dataSets{ds});
+    
+    % Number of metrics excluding stdDev
+    numBasicMetrics = 5;
+    
+    for i = 1:length(classifiers)
+        % Extract indices for the basic metrics
+        basicMetricStartIdx = (i - 1) * numBasicMetrics + 1;
+        basicMetricEndIdx = basicMetricStartIdx + numBasicMetrics - 1;
+        
+        % Extract the basic metrics (accuracy, precision, recall, specificity, f1_score)
+        basicMetrics = metrics(basicMetricStartIdx:basicMetricEndIdx);
+        
+        % Extract the standard deviation, which is placed after all basic metrics
+        stdDevIdx = length(classifiers) * numBasicMetrics + i;
+        stdDev = metrics(stdDevIdx);
+        
+        % Rearrange and store metrics in the desired order
+        startIdx = (i - 1) * 6 + 1;
+        metricsConsolidated(ds, startIdx:startIdx+5) = [basicMetrics(1), stdDev, basicMetrics(2:end)];
+    end
 end
 
-metricsConsolidated = [dataSets', num2cell(round(metricsConsolidated,2))];
-writecell(metricsConsolidated, "ConsolidatedMetrics-Baseline.xlsx");
+% Generate headers in the new order
+headers = {'Dataset_name'};
+for i = 1:length(classifiers)
+    classifierName = classifiers{i};
+    headers = [headers, ...
+            strcat(classifierName, '_Accuracy'), ...
+            strcat(classifierName, '_StdDev'), ...
+            strcat(classifierName, '_Precision'), ...
+            strcat(classifierName, '_Recall'), ...
+            strcat(classifierName, '_Specificity'), ...
+            strcat(classifierName, '_F1Score')];
+end
+
+% Combine headers with the data
+metricsConsolidated = [headers; dataSets', num2cell(round(metricsConsolidated, 2))];
+
+% Write to Excel file
+writecell(metricsConsolidated, "PP-ConsolidatedMetrics-Baseline-LargeDatasets.xlsx");
+
+
 
 disp("Processing finished!")
