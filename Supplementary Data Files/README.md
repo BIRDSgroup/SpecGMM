@@ -16,7 +16,7 @@ obtained using the QIIME2 analysis.
 
 ## File D3: SpecGMM Evaluations
 
-The file contains detailed classification results for all the datasets analysed in the study for Linear Discriminant (LD), Linear SVM (LSVM), Quadratic SVM (QSVM), FineKNN, Subspace Discriminant, and Subspace KNN classifiers comparing baseline and SpecGMM methods. The following performance metrics, computed over four folds, are available in the file:
+A) The file contains detailed classification results for all the datasets analysed in the study for Linear Discriminant (LD), Linear SVM (LSVM), Quadratic SVM (QSVM), FineKNN, Subspace Discriminant, and Subspace KNN classifiers comparing baseline and SpecGMM methods. The following performance metrics, computed over four folds, are available in the file:
 
 - average accuracy
 - standard deviation
@@ -25,7 +25,7 @@ The file contains detailed classification results for all the datasets analysed 
 - average weighted specificity
 - average weighted F1-score
 
-The file also contains results for the baseline vs. SpecGMM methods after performing homology reduction on our datasets using the GraphPart algorithm for different threshold values and different numbers of partitions. This was done to tackle the potential issue of information leakage due to the high similarity between train and test sets. Please note that GraphPart could partition only some of the datasets for certain values of thresholds and the number of partitions. The LD and LSVM classifiers were used in the analysis.
+B-i) and B-ii) Results for the baseline vs. SpecGMM methods after performing homology reduction on our datasets using the GraphPart algorithm for different threshold values and different numbers of partitions. This was done to tackle the potential issue of information leakage due to the high similarity between train and test sets. Please note that GraphPart could partition only some of the datasets for certain values of thresholds and the number of partitions. The LD and LSVM classifiers were used in the analysis.
 
 ## File D4: Comparative analysis of numerical representations
 
